@@ -57,11 +57,11 @@ li a img{
     align-items: flex-start;
 }
 
-.origins{
-    flex: 9;
+.origin{
+    flex: 3;
 }
 
-.origins span{
+.origin span{
     border-radius: 2rem;
     background-color: whitesmoke;
     display: inline-block;
