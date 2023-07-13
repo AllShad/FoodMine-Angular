@@ -14,7 +14,7 @@ export class CartService {
 
   addToCart(food:Food):void{
     let cartItem = this.cart.items.find(items => items.food.id === food.id)
-    if(!cartItem)
+    if(cartItem)
       return
 
     this.cart.items.push(new CartItem(food));
