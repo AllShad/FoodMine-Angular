@@ -1,8 +1,10 @@
 import express, { response } from "express";
 import cors from "cors";
-import { sample_food, sample_tags } from "./data";
+import { sample_food, sample_tags, sample_users } from "./data";
 
 const app = express();
+app.use(express.json);
+
 app.use(cors({
     credentials:true,
     origin:["http://localhost:4200"]
@@ -33,6 +35,20 @@ app.get("/api/foods/:foodId",(req, res) => {
     const food = sample_food.find(food => food.id === foodId);
     res.send(food);
 })
+
+app.post("/api/users/login",(req,res) => {
+    const {email, password} = req.body;
+    const user = sample_users.find(user => user.email === email && user.password === password);
+
+    if(user){
+        res.send();
+    }
+
+})
+
+// const generateTokenResponde = (user:any){
+//     Tentar instalar o JTW depois
+// }
 
 const port = 5000;
 
