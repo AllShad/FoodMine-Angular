@@ -1,6 +1,7 @@
 import express, { response } from "express";
 import cors from "cors";
 import { sample_food, sample_tags, sample_users } from "./data";
+import jwt from "jsonwebtoken"
 
 const app = express();
 app.use(express.json);
@@ -41,16 +42,26 @@ app.post("/api/users/login",(req,res) => {
     const user = sample_users.find(user => user.email === email && user.password === password);
 
     if(user){
-        res.send();
+        res.send(generateTokenResponde(user));
+    }else{
+        res.status(400).send("USer name or password is not valid!")
     }
 
 })
 
-// const generateTokenResponde = (user:any){
-//     Tentar instalar o JTW depois
-// }
+const generateTokenResponde = (user:any) => {
+    const token = jwt.sign({
+        email:user.email,
+        isAdmin:user.isAdmin
+    }, "SomeRandomText", {
+        expiresIn:'30d'
+    })
 
-const port = 5000;
+    user.token = token;
+    return user
+}
+
+const port = 5050;
 
 app.listen(port, () => {
     console.log("Website served on http://localhost:" + port);
