@@ -1,6 +1,10 @@
 # Frontend
 
+<<<<<<< HEAD
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.0.4.
+=======
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.1.3.
+>>>>>>> 8095ca21e73b9af6d678329e76734aab8921656c
 
 ## Development server
 
