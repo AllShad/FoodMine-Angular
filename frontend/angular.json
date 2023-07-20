@@ -5,9 +5,6 @@
   "projects": {
     "frontend": {
       "projectType": "application",
-<<<<<<< HEAD
-      "schematics": {},
-=======
       "schematics": {
         "@schematics/angular:class": {
           "skipTests": true
@@ -34,7 +31,6 @@
           "skipTests": true
         }
       },
->>>>>>> 8095ca21e73b9af6d678329e76734aab8921656c
       "root": "",
       "sourceRoot": "src",
       "prefix": "app",

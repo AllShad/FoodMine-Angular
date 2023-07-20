@@ -16,9 +16,9 @@ export class HomeComponent {
     let foodsObservable:Observable<Food[]>;
     activatedRoute.params.subscribe((params) => {
       if(params.searchTerm){
-        foodsObservable = this.foodService.getAllFoodBySearchTerm(params.searchTerm);
+        foodsObservable = this.foodService.getAllFoodsBySearchTerm(params.searchTerm);
       }else if(params.tag){
-        foodsObservable = this.foodService.getAllFoodByTag(params.tag);
+        foodsObservable = this.foodService.getAllFoodsByTag(params.tag);
       }
       else
         foodsObservable = this.foodService.getAll();
